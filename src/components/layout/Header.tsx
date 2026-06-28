@@ -1,74 +1,50 @@
-import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Button from "../common/Button";
 import logo from "../../assets/logo.png";
 
+const menus = [
+  { label: "Home", to: "/" },
+  { label: "Service", to: "/service" },
+  { label: "Project", to: "/project" },
+  { label: "About", to: "/about" },
+  { label: "Contact", to: "/contact" },
+];
+
 export default function Header() {
-  const menus = ["Home", "Service", "Project", "About", "Contact"];
-  const [activeMenu, setActiveMenu] = useState("Home");
+  const { pathname } = useLocation();
 
-  const getSectionId = (menu: string) => {
-    return menu.toLowerCase() === "home" ? "hero" : menu.toLowerCase();
-  };
-
-  useEffect(() => {
-    const updateActiveMenu = () => {
-      const currentHash = window.location.hash.replace("#", "");
-
-      if (!currentHash || currentHash === "hero") {
-        setActiveMenu("Home");
-        return;
-      }
-
-      const currentMenu = menus.find(
-        (menu) => getSectionId(menu) === currentHash,
-      );
-
-      if (currentMenu) {
-        setActiveMenu(currentMenu);
-      }
-    };
-
-    updateActiveMenu();
-
-    window.addEventListener("hashchange", updateActiveMenu);
-
-    return () => {
-      window.removeEventListener("hashchange", updateActiveMenu);
-    };
-  }, []);
+  const isActive = (to: string) => pathname === to;
 
   return (
-    <header className="fixed left-0 top-0 z-50 w-full bg-[#0A0A0C] px-12 py-4">
-      <div className="mx-auto flex items-center justify-between rounded-full bg-white/8 px-10 py-6 shadow-lg">
-        <a href="#hero" className="flex items-center gap-3">
+    <header className="fixed left-0 top-0 z-50 w-full bg-[#0A0A0C] px-12 py-6">
+      <div className="mx-auto flex items-center justify-between rounded-full bg-white/8 px-8 py-4 shadow-lg">
+        <Link to="/" className="flex items-center gap-3">
           <img
             src={logo}
             alt="FianDev Logo"
             className="h-10 w-10 object-contain"
           />
-
           <h2 className="text-xl font-bold text-white">
             Fian<span className="font-normal">Dev</span>
           </h2>
-        </a>
+        </Link>
 
         <div className="flex items-center gap-12">
           <nav>
             <ul className="flex items-center gap-10">
               {menus.map((menu) => (
-                <li key={menu}>
-                  <a
-                    href={`#${getSectionId(menu)}`}
-                    onClick={() => setActiveMenu(menu)}
+                <li key={menu.label}>
+                  <Link
+                    to={menu.to}
                     style={{
-                      color: activeMenu === menu ? "#014AEB" : "#FFFFFF",
+                      color: isActive(menu.to) ? "#014AEB" : "#FFFFFF",
                     }}
-                    className={`text-md transition-colors duration-300${
-                      activeMenu === menu ? "font-semibold" : "font-regular"
+                    className={`text-base transition-colors duration-300 ${
+                      isActive(menu.to) ? "font-semibold" : "font-normal"
                     }`}
                   >
-                    {menu}
-                  </a>
+                    {menu.label}
+                  </Link>
                 </li>
               ))}
             </ul>
