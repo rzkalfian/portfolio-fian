@@ -1,6 +1,6 @@
 import Footer from "../../components/layout/Footer";
 import Header from "../../components/layout/Header";
-import ProjectSection from "../../components/sections/ProjectSection";
+import ProjectSection from "../../components/menu/ProjectSection";
 
 export default function ProjectPage() {
   return (

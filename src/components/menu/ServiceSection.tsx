@@ -70,7 +70,7 @@ const services: Service[] = [
 
 export default function ServiceSection() {
   return (
-    <section id="service" className="py-24">
+    <section id="service" className="py-8">
       <div className="mx-auto max-w-5xl px-6">
         {/* Header */}
         <div className="mb-14 px-8 py-10 text-center">

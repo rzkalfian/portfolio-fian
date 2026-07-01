@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AboutPage from "./pages/about/AboutPage";
 import ContactPage from "./pages/contact/ContactPage";
 import HomePage from "./pages/home/HomePage";
+import ProjectDetailPage from "./pages/project/ProjectDetailPage";
 import ProjectPage from "./pages/project/ProjectPage";
 import ServicePage from "./pages/service/ServicePage";
 
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/service" element={<ServicePage />} />
         <Route path="/project" element={<ProjectPage />} />
+        <Route path="/project/:id" element={<ProjectDetailPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>

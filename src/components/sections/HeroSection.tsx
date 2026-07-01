@@ -2,13 +2,13 @@ import profile from "../../assets/images/profile.png";
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="relative px-18 pt-56 pb-40">
+    <section id="hero" className="relative px-18 pt-56 pb-16">
       <div className="relative mx-auto">
         {/* Layer belakang 2 */}
-        <div className="absolute left-4 top-10 h-[320px] w-[calc(100%-28px)] rounded-[32px] rounded-br-[16px] border-b border-r border-white/30" />
+        <div className="absolute left-3 top-10 h-[320px] w-[calc(100%-28px)] rounded-[32px] rounded-br-[16px] border-b border-r border-white/30" />
 
         {/* Layer belakang 1 */}
-        <div className="absolute left-2 top-5 h-[320px] w-[calc(100%-36px)] rounded-[32px] rounded-br-[16px] border-b border-r border-white/30" />
+        <div className="absolute left-1 top-5 h-[320px] w-[calc(100%-36px)] rounded-[32px] rounded-br-[16px] border-b border-r border-white/30" />
 
         {/* Card utama */}
         <div
@@ -33,9 +33,9 @@ export default function HeroSection() {
       text-white/70
     "
             >
-              Saya adalah seorang Frontend Developer yang berfokus pada
-              pengembangan aplikasi web modern, performa yang optimal, serta
-              pengalaman pengguna yang intuitif dan mudah digunakan.
+              Saya adalah seorang UIX Engineer yang mampu merancang tampilan
+              dari sisi desain hingga implementasi kode, membangun antarmuka
+              yang estetis, fungsional, dan siap produksi.
             </p>
 
             <div className="mt-8 flex items-center gap-8">
@@ -77,6 +77,18 @@ export default function HeroSection() {
             alt="Fian"
             className="absolute bottom-0 right-20 h-[420px] object-contain grayscale"
           />
+
+          {/* Mini stats — overlay di atas foto bagian bawah */}
+          <div className="absolute bottom-2 right-16 z-30 flex items-center gap-3">
+            <div className="rounded-2xl bg-black/40 px-4 py-2 backdrop-blur-md">
+              <span className="font-poppins text-[22px] font-bold text-[#014AEB]">3+</span>
+              <p className="font-['Nunito_Sans'] text-xs text-white/50">Tahun Pengalaman</p>
+            </div>
+            <div className="rounded-2xl bg-black/40 px-4 py-2 backdrop-blur-md">
+              <span className="font-poppins text-[22px] font-bold text-[#014AEB]">20+</span>
+              <p className="font-['Nunito_Sans'] text-xs text-white/50">Proyek Selesai</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

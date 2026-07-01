@@ -1,47 +1,5 @@
-const projects = [
-  {
-    title: "E-Commerce Dashboard",
-    description:
-      "Dashboard manajemen toko online dengan fitur analitik real-time, manajemen produk, dan laporan penjualan.",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Chart.js"],
-    link: "#",
-  },
-  {
-    title: "Landing Page SaaS",
-    description:
-      "Halaman pemasaran modern untuk produk SaaS dengan animasi scroll, section pricing, dan form demo.",
-    tags: ["Next.js", "Framer Motion", "Tailwind CSS"],
-    link: "#",
-  },
-  {
-    title: "Aplikasi Manajemen Tugas",
-    description:
-      "Aplikasi produktivitas untuk mengelola tugas harian dengan fitur drag & drop dan notifikasi.",
-    tags: ["React", "Zustand", "DnD Kit"],
-    link: "#",
-  },
-  {
-    title: "Portfolio Template",
-    description:
-      "Template portfolio minimalis dan modern untuk developer dengan mode gelap dan animasi halus.",
-    tags: ["Vite", "TypeScript", "Tailwind CSS"],
-    link: "#",
-  },
-  {
-    title: "Blog Platform",
-    description:
-      "Platform blog dengan editor markdown, sistem komentar, dan fitur pencarian artikel secara real-time.",
-    tags: ["Next.js", "MDX", "Prisma"],
-    link: "#",
-  },
-  {
-    title: "UI Component Library",
-    description:
-      "Kumpulan komponen UI yang dapat digunakan ulang dengan dokumentasi lengkap dan theme yang dapat dikustomisasi.",
-    tags: ["React", "Storybook", "TypeScript"],
-    link: "#",
-  },
-];
+import { Link } from "react-router-dom";
+import { projects } from "../../data/projects";
 
 export default function ProjectSection() {
   return (
@@ -63,7 +21,7 @@ export default function ProjectSection() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <div
-              key={project.title}
+              key={project.id}
               className="group flex flex-col rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-[#014AEB]/40 hover:bg-white/8"
             >
               {/* Placeholder thumbnail */}
@@ -87,12 +45,12 @@ export default function ProjectSection() {
                 ))}
               </div>
 
-              <a
-                href={project.link}
+              <Link
+                to={`/project/${project.id}`}
                 className="flex items-center gap-2 text-sm font-medium text-white/70 transition-colors hover:text-white"
               >
                 Lihat Proyek <span>→</span>
-              </a>
+              </Link>
             </div>
           ))}
         </div>
