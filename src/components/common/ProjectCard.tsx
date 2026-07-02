@@ -7,6 +7,7 @@ interface ProjectCardProps {
   link?: string;
   gradient?: string;
   featured?: boolean;
+  image?: string;
 }
 
 export default function ProjectCard({
@@ -16,6 +17,7 @@ export default function ProjectCard({
   link = "/project",
   gradient = "from-[#014AEB]/20 to-[#1CC8B7]/10",
   featured = false,
+  image,
 }: ProjectCardProps) {
   return (
     <div
@@ -24,11 +26,25 @@ export default function ProjectCard({
       }`}
     >
       {/* Thumbnail */}
-      <div
-        className={`bg-gradient-to-br ${gradient} ${
-          featured ? "lg:h-auto lg:w-2/5" : "h-48 w-full"
-        }`}
-      />
+      {image ? (
+        <div
+          className={`overflow-hidden ${
+            featured ? "lg:h-auto lg:w-2/5" : "h-48 w-full"
+          }`}
+        >
+          <img
+            src={image}
+            alt={title}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+      ) : (
+        <div
+          className={`bg-gradient-to-br ${gradient} ${
+            featured ? "lg:h-auto lg:w-2/5" : "h-48 w-full"
+          }`}
+        />
+      )}
 
       {/* Content */}
       <div className="flex flex-1 flex-col gap-3 p-6">

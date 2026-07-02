@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import ProjectCard from "../common/ProjectCard";
-import { featuredProjects } from "../../data/projects";
+import { projects } from "../../data/projects";
 
 export default function FeaturedProjectsSection() {
-  const [featured, ...rest] = featuredProjects;
+  const [featured, ...rest] = projects.slice(0, 3);
 
   return (
     <section className="px-6 py-16 md:px-18 md:py-20">
@@ -27,12 +27,26 @@ export default function FeaturedProjectsSection() {
 
         <div className="flex flex-col gap-6">
           {/* Featured card — horizontal layout */}
-          <ProjectCard {...featured} featured />
+          <ProjectCard
+            title={featured.title}
+            description={featured.description}
+            tags={featured.tags}
+            link={`/project/${featured.id}`}
+            image={featured.image}
+            featured
+          />
 
           {/* Two smaller cards */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {rest.map((project) => (
-              <ProjectCard key={project.title} {...project} />
+              <ProjectCard
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                tags={project.tags}
+                link={`/project/${project.id}`}
+                image={project.image}
+              />
             ))}
           </div>
         </div>

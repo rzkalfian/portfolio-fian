@@ -24,8 +24,18 @@ export default function ProjectSection() {
               key={project.id}
               className="group flex flex-col rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-[#014AEB]/40 hover:bg-white/8"
             >
-              {/* Placeholder thumbnail */}
-              <div className="mb-5 h-40 w-full rounded-xl bg-gradient-to-br from-[#014AEB]/20 to-[#1CC8B7]/10" />
+              {/* Thumbnail */}
+              <div className="mb-5 h-40 w-full overflow-hidden rounded-xl">
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="h-full w-full bg-gradient-to-br from-[#014AEB]/20 to-[#1CC8B7]/10" />
+                )}
+              </div>
 
               <h3 className="mb-2 font-poppins text-lg font-semibold text-white">
                 {project.title}
