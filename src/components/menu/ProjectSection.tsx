@@ -3,13 +3,13 @@ import { projects } from "../../data/projects";
 
 export default function ProjectSection() {
   return (
-    <section id="project" className="px-18 py-24">
+    <section id="project" className="px-6 py-16 md:px-18 md:py-24">
       <div className="mx-auto max-w-6xl">
         <div className="mb-14 text-center">
           <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[#014AEB]">
             Karya Terbaik Saya
           </p>
-          <h2 className="font-poppins text-4xl font-bold text-white">
+          <h2 className="font-poppins text-2xl font-bold text-white md:text-4xl">
             Proyek Saya
           </h2>
           <p className="mt-4 text-base font-light text-white/60">

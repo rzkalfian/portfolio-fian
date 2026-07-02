@@ -88,3 +88,38 @@ export const projects: Project[] = [
 export function getProjectById(id: string): Project | undefined {
   return projects.find((p) => p.id === id);
 }
+
+// ─── Featured projects (FeaturedProjectsSection di HomePage) ─────────────────
+
+export type FeaturedProject = {
+  title: string;
+  description: string;
+  tags: string[];
+  gradient?: string;
+  featured?: boolean;
+};
+
+export const featuredProjects: FeaturedProject[] = [
+  {
+    title: "E-Commerce Dashboard",
+    description:
+      "Dashboard manajemen toko online dengan fitur analitik real-time, manajemen produk, laporan penjualan, dan sistem notifikasi. Dibangun dengan React dan TypeScript.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Chart.js"],
+    gradient: "from-[#014AEB]/30 to-[#1CC8B7]/10",
+    featured: true,
+  },
+  {
+    title: "Landing Page SaaS",
+    description:
+      "Halaman pemasaran modern untuk produk SaaS dengan animasi scroll dan section pricing interaktif.",
+    tags: ["Next.js", "Framer Motion"],
+    gradient: "from-purple-500/20 to-pink-500/10",
+  },
+  {
+    title: "Aplikasi Manajemen Tugas",
+    description:
+      "Aplikasi produktivitas harian dengan fitur drag & drop dan notifikasi real-time.",
+    tags: ["React", "Zustand", "DnD Kit"],
+    gradient: "from-emerald-500/20 to-teal-500/10",
+  },
+];

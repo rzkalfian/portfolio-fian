@@ -6,7 +6,7 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="pt-32">
+      <main className="pt-24 md:pt-32">
         <ContactSection />
       </main>
       <Footer />

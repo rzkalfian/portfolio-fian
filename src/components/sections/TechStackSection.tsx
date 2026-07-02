@@ -18,7 +18,7 @@ const techs = [
 
 export default function TechStackSection() {
   return (
-    <section className="px-18 py-8">
+    <section className="px-6 py-8 md:px-18">
       <div
         className="marquee-container overflow-hidden"
         style={{

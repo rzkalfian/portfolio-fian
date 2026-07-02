@@ -1,25 +1,5 @@
 import { useState } from "react";
-
-const contactLinks = [
-  {
-    icon: "✉️",
-    label: "Email",
-    value: "fian@example.com",
-    href: "mailto:fian@example.com",
-  },
-  {
-    icon: "💼",
-    label: "LinkedIn",
-    value: "linkedin.com/in/fiandev",
-    href: "https://linkedin.com/in/fiandev",
-  },
-  {
-    icon: "🐙",
-    label: "GitHub",
-    value: "github.com/fiandev",
-    href: "https://github.com/fiandev",
-  },
-];
+import { contactLinks } from "../../data/contacts";
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -32,13 +12,13 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="px-18 py-24">
+    <section id="contact" className="px-6 py-16 md:px-18 md:py-24">
       <div className="mx-auto max-w-6xl">
         <div className="mb-14 text-center">
           <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[#014AEB]">
             Mari Terhubung
           </p>
-          <h2 className="font-poppins text-4xl font-bold text-white">
+          <h2 className="font-poppins text-2xl font-bold text-white md:text-4xl">
             Hubungi Saya
           </h2>
           <p className="mt-4 text-base font-light text-white/60">

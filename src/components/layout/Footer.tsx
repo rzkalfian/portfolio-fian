@@ -11,8 +11,8 @@ const menus = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#0A0A0C] px-12 py-8">
-      <div className="mx-auto flex items-center justify-between px-10">
+    <footer className="border-t border-white/10 bg-[#0A0A0C] px-6 py-8 md:px-12">
+      <div className="mx-auto flex flex-col items-center gap-6 md:flex-row md:justify-between md:px-10">
         <Link to="/" className="flex items-center gap-3">
           <img
             src={logo}
@@ -26,7 +26,7 @@ export default function Footer() {
         </Link>
 
         <nav>
-          <ul className="flex items-center gap-12">
+          <ul className="flex flex-wrap items-center justify-center gap-6 md:gap-12">
             {menus.map((menu) => (
               <li key={menu.label}>
                 <Link

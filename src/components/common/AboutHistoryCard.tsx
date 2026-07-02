@@ -1,98 +1,4 @@
-const experiences = [
-  {
-    role: "Freelance UI/UX",
-    workType: "Work From Anywhere",
-    entries: [
-      {
-        company: "ORBIT 360 - Orbit Digital Library",
-        period: "Desember 2023  -  Januari 2024",
-        tasks: [
-          "Membuat wireframe untuk Aplikasi Orbit Digilib.",
-          "Implementasi UI ke High Fidelity dari wireframe.",
-          "Implementasi prototyping untuk design UI yang dibuat.",
-        ],
-      },
-      {
-        company: "ORBIT 360 - CMS Digital Library",
-        period: "Mei 2024  -  Juni 2024",
-        tasks: [
-          "Riset UI CMS dari referensi Apps karena masih berkaitan.",
-          "Implementasi UI ke High Fidelity dan membuat lebih User Friendly.",
-        ],
-      },
-      {
-        company: "ORBIT 360 - CMS Masjid Istiqlal",
-        period: "Desember 2024  -  Januari 2025",
-        tasks: [
-          "Riset UI CMS dari referensi Apps Masjid Istiqlal dan Website yang sudah berjalan.",
-          "Implementasi UI ke High Fidelity dan membuat lebih User Friendly.",
-        ],
-      },
-      {
-        company: "ORBIT 360 - Redesign Website PII",
-        period: "Mei 2024  -  Juli 2025",
-        tasks: [
-          "Riset UI CMS dari referensi Website pemerintahan yang lebih trendy.",
-          "Implementasi UI ke High Fidelity dan membuat lebih User Friendly.",
-        ],
-      },
-      {
-        company: "ORBIT 360 - Orbit TKA",
-        period: "Agustus 2025  -  Oktober 2025",
-        tasks: [
-          "Riset UI CMS dari referensi CBT TKA yang digunakan.",
-          "Implementasi UI ke High Fidelity dan membuat lebih User Friendly.",
-          "Membuat tampilan agar UX mirip seperti CBT TKA.",
-        ],
-      },
-    ],
-  },
-  {
-    role: "Intern UI/UX dan Junior Mobile Developer",
-    workType: "Work From Home",
-    entries: [
-      {
-        company: "Stevor Indonesia",
-        period: "Mei 2024  -  Mei 2025",
-        tasks: [
-          "Membuat design UI untuk App Marketplace Stevor Wholesale.",
-          "Menganalisa App Stevor Wholesale dari platform marketplace yang sudah berjalan.",
-          "Membuat design UI untuk Stevor Express dari referensi Ojek Online.",
-        ],
-      },
-    ],
-  },
-  {
-    role: "UIX Desainer",
-    workType: "Work From Anywhere",
-    entries: [
-      {
-        company: "CV Insan Kalbu Indonesia",
-        period: "Oktober 2023  -  November 2023",
-        tasks: [
-          "Membuat flow untuk aplikasi sebelum tahap implementasi desain.",
-          "Monitoring pembuatan logo oleh vendor.",
-          "Monitoring desain UI yang dikerjakan vendor.",
-        ],
-      },
-    ],
-  },
-  {
-    role: "Freelance UI/UX dan Mobile Developer",
-    workType: "Work From Anywhere",
-    entries: [
-      {
-        company: "Mahasiswa UIN Surakarta",
-        period: "Oktober 2023  -  November 2023",
-        tasks: [
-          "Riset mengenai BMI Kalkulator.",
-          "Implementasi UI sederhana dan possible diterapkan di mobile apps.",
-          "Implementasi BMI Kalkulator dan UI edukasi stunting ke mobile apps.",
-        ],
-      },
-    ],
-  },
-];
+import { experiences } from "../../data/experiences";
 
 export default function AboutHistoryCard() {
   return (
@@ -108,12 +14,12 @@ export default function AboutHistoryCard() {
       {/* Experience section */}
       <div className="mt-8">
         {/* Header */}
-        <div className="flex items-start justify-between px-8 py-8">
-          <h2 className="max-w-[60%] font-poppins text-[28px] font-bold leading-[1.3] text-white">
+        <div className="flex flex-col gap-4 px-4 py-6 md:flex-row md:items-start md:justify-between md:px-8 md:py-8">
+          <h2 className="max-w-full font-poppins text-[22px] font-bold leading-[1.3] text-white md:max-w-[60%] md:text-[28px]">
             Membangun Pengalaman Digital Melalui Karya Terbaik.
           </h2>
           <svg
-            className="mt-2 shrink-0"
+            className="mt-2 hidden shrink-0 md:block"
             width="100"
             height="24"
             viewBox="0 0 100 24"
@@ -135,23 +41,23 @@ export default function AboutHistoryCard() {
         {experiences.map((exp, i) => (
           <div key={i} className={""}>
             {/* Role header */}
-            <div className="flex items-center justify-between px-8 pt-6 pb-2">
+            <div className="flex flex-col gap-1 px-4 pt-6 pb-2 md:flex-row md:items-center md:justify-between md:px-8">
               <span className="font-poppins text-base font-bold text-white">
                 {exp.role}
               </span>
-              <span className="font-poppins text-sm font-bold text-white">
+              <span className="font-poppins text-sm font-bold text-white/60 md:text-white">
                 {exp.workType}
               </span>
             </div>
 
             {/* Entries */}
             {exp.entries.map((entry, j) => (
-              <div key={j} className="px-8 pb-6">
-                <div className="mb-2 flex items-center justify-between">
+              <div key={j} className="px-4 pb-6 md:px-8">
+                <div className="mb-2 flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
                   <span className="font-['Nunito_Sans'] text-[14px] text-white/80">
                     {entry.company}
                   </span>
-                  <span className="font-['Nunito_Sans'] text-[13px] text-white/60">
+                  <span className="font-['Nunito_Sans'] text-[12px] text-white/50 md:text-[13px] md:text-white/60">
                     {entry.period}
                   </span>
                 </div>

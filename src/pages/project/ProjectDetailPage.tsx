@@ -36,10 +36,42 @@ export default function ProjectDetailPage() {
     <>
       <Header />
 
-      <main className="px-18 pt-56 pb-24">
+      <main className="px-6 pt-28 pb-16 md:px-18 md:pt-56 md:pb-24">
         {/* Hero card — mirip HeroSection, foto project di kanan */}
         <div className="relative mx-auto">
-          {/* Layer belakang 2 */}
+
+          {/* ── Mobile hero ─── */}
+          <div className="flex flex-col gap-6 md:hidden">
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-[#014AEB]/40 bg-[#014AEB]/10 px-3 py-1 font-poppins text-xs text-[#014AEB]"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <h1 className="font-poppins text-[24px] font-bold leading-[36px] text-white">
+              {project.title}
+            </h1>
+            <p className="font-['Nunito_Sans'] text-[14px] font-light leading-[26px] text-white/70">
+              {project.subtitle}
+            </p>
+            {project.link !== "#" && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#014AEB] to-[#1CC8B7] px-5 py-2.5 font-poppins text-sm text-white"
+              >
+                Link Website →
+              </a>
+            )}
+          </div>
+
+          {/* ── Desktop hero card ─── */}
+          <div className="hidden md:block">
           <div className="absolute left-3 top-10 h-[320px] w-[calc(100%-28px)] rounded-[32px] rounded-br-[16px] border-b border-r border-white/30" />
           {/* Layer belakang 1 */}
           <div className="absolute left-1 top-5 h-[320px] w-[calc(100%-36px)] rounded-[32px] rounded-br-[16px] border-b border-r border-white/30" />
@@ -119,16 +151,17 @@ export default function ProjectDetailPage() {
 
 
           </div>
-        </div>
+          </div>{/* end hidden md:block */}
+        </div>{/* end relative mx-auto */}
 
         {/* Tentang Aplikasi */}
-        <div className="mt-32">
+        <div className="mt-12 md:mt-32">
           <div className="mb-2 flex items-center gap-3">
             <span className="h-px w-8 bg-[#014AEB]" />
             <span className="font-poppins text-sm text-[#014AEB]">Detail Proyek</span>
           </div>
 
-          <h2 className="font-poppins text-[28px] font-bold text-white">
+          <h2 className="font-poppins text-[22px] font-bold text-white md:text-[28px]">
             Tentang <span className="text-[#014AEB]">Aplikasi</span>
           </h2>
           <p className="mt-1 font-poppins text-sm uppercase tracking-widest text-white/40">
